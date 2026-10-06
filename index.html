@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hospitenza — Curated Restaurant Equipment Solutions</title>
+  <title>Hospitenza — Curated Restaurant Solutions Library</title>
   
-  <!-- Fonts: Playfair Display + Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -32,14 +31,13 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* HEADER */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.5rem 3rem;
+      padding: 1.2rem 3rem;
       border-bottom: 1px solid var(--border-color);
-      background-color: rgba(251, 249, 245, 0.9);
+      background-color: rgba(251, 249, 245, 0.95);
       position: sticky;
       top: 0;
       z-index: 100;
@@ -50,15 +48,8 @@
       font-family: var(--font-heading);
       font-size: 1.8rem;
       font-weight: 600;
-      letter-spacing: -0.5px;
       color: var(--text-main);
       text-decoration: none;
-    }
-
-    .user-actions {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
     }
 
     .btn {
@@ -71,6 +62,8 @@
       font-weight: 500;
       cursor: pointer;
       transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
     }
 
     .btn-primary {
@@ -83,47 +76,177 @@
       border-color: var(--accent);
     }
 
-    .btn-outline:hover {
-      background: rgba(0,0,0,0.05);
-    }
-
-    /* VIEWS CONTAINER */
     .container {
-      max-width: 1300px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 3rem 2rem;
+      padding: 3rem 1.5rem;
     }
 
     .view { display: none; }
     .view.active { display: block; }
 
-    /* HERO SECTION (LANDING) */
+    /* LANDING STYLES (BLUEUNICORN INSPIRED) */
     .hero {
       text-align: center;
-      padding: 4rem 1rem;
-      max-width: 800px;
+      padding: 4rem 1rem 3rem;
+      max-width: 850px;
       margin: 0 auto;
     }
 
     .hero h1 {
       font-family: var(--font-heading);
-      font-size: 3.5rem;
+      font-size: 3.2rem;
       line-height: 1.15;
       margin-bottom: 1.5rem;
-      font-weight: 500;
     }
 
     .hero p {
       font-size: 1.2rem;
       color: var(--text-muted);
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
     }
 
-    /* LOGIN MODAL */
+    .badge {
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      background: rgba(200, 109, 81, 0.1);
+      color: var(--accent);
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-price {
+      font-size: 2rem;
+      font-family: var(--font-heading);
+      margin: 1rem 0;
+      color: var(--text-main);
+    }
+
+    .card-features {
+      list-style: none;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .card-features li {
+      margin-bottom: 0.5rem;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    .card-features li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    .banner-all-access {
+      background: var(--text-main);
+      color: #FFF;
+      border-radius: 20px;
+      padding: 3rem 2rem;
+      text-align: center;
+      margin: 4rem 0;
+    }
+
+    .banner-all-access h2 {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    /* DASHBOARD / MEMBER AREA STYLES */
+    .controls-wrapper {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+      margin-bottom: 3rem;
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .select-input, .search-input {
+      padding: 0.8rem 1.2rem;
+      border: 1px solid var(--border-color);
+      border-radius: 30px;
+      font-size: 0.95rem;
+      outline: none;
+      background: var(--bg-color);
+    }
+
+    .select-input { flex: 1; min-width: 220px; cursor: pointer; }
+    .search-input { flex: 2; min-width: 260px; }
+
+    .collection-section { margin-bottom: 3.5rem; }
+    .collection-title {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .scroll-row {
+      display: flex;
+      gap: 1.5rem;
+      overflow-x: auto;
+      padding-bottom: 1rem;
+    }
+
+    .item-card {
+      min-width: 280px;
+      max-width: 280px;
+      background: var(--card-bg);
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .item-card img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+    }
+
+    .item-card-body { padding: 1.2rem; }
+    .item-card-category { font-size: 0.75rem; color: var(--accent); font-weight: 600; text-transform: uppercase; }
+    .item-card-title { font-size: 1.1rem; font-weight: 600; margin-top: 0.3rem; }
+
+    /* MODAL */
     .modal-overlay {
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.4);
+      background: rgba(0,0,0,0.5);
       display: none;
       justify-content: center;
       align-items: center;
@@ -136,206 +259,18 @@
       padding: 2.5rem;
       border-radius: 16px;
       width: 100%;
-      max-width: 400px;
+      max-width: 420px;
       text-align: center;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    }
-
-    .modal h2 {
-      font-family: var(--font-heading);
-      margin-bottom: 0.5rem;
-    }
-
-    .modal p {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-bottom: 1.5rem;
     }
 
     .modal input {
       width: 100%;
-      padding: 0.8rem 1rem;
+      padding: 0.8rem;
       border: 1px solid var(--border-color);
       border-radius: 8px;
-      margin-bottom: 1rem;
+      margin: 1.2rem 0;
       text-align: center;
-      font-size: 1.1rem;
-      letter-spacing: 2px;
-    }
-
-    /* DASHBOARD / CABINET */
-    .dashboard-header {
-      margin-bottom: 2.5rem;
-    }
-
-    .dashboard-header h2 {
-      font-family: var(--font-heading);
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .controls-bar {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-bottom: 3rem;
-    }
-
-    .search-input {
-      flex: 1;
-      min-width: 280px;
-      padding: 0.8rem 1.2rem;
-      border: 1px solid var(--border-color);
-      border-radius: 30px;
-      background: var(--card-bg);
-      font-size: 0.95rem;
-    }
-
-    .filter-pills {
-      display: flex;
-      gap: 0.5rem;
-      overflow-x: auto;
-    }
-
-    .pill {
-      padding: 0.6rem 1.2rem;
-      border-radius: 30px;
-      border: 1px solid var(--border-color);
-      background: var(--card-bg);
-      cursor: pointer;
-      font-size: 0.85rem;
-      white-space: nowrap;
-      transition: all 0.2s;
-    }
-
-    .pill.active {
-      background: var(--text-main);
-      color: #FFF;
-      border-color: var(--text-main);
-    }
-
-    /* HORIZONTAL SCROLL CAROUSEL */
-    .collection-section {
-      margin-bottom: 3.5rem;
-    }
-
-    .collection-title {
-      font-family: var(--font-heading);
-      font-size: 1.8rem;
-      margin-bottom: 1.2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .scroll-row {
-      display: flex;
-      gap: 1.5rem;
-      overflow-x: auto;
-      padding-bottom: 1rem;
-      scroll-behavior: smooth;
-    }
-
-    .scroll-row::-webkit-scrollbar {
-      height: 6px;
-    }
-    .scroll-row::-webkit-scrollbar-thumb {
-      background: #DDD;
-      border-radius: 10px;
-    }
-
-    .item-card {
-      min-width: 280px;
-      max-width: 280px;
-      background: var(--card-bg);
-      border-radius: 12px;
-      border: 1px solid var(--border-color);
-      overflow: hidden;
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .item-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.06);
-    }
-
-    .item-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      background: #F0F0F0;
-    }
-
-    .item-card-body {
-      padding: 1.2rem;
-    }
-
-    .item-card-category {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--accent);
-      font-weight: 600;
-      margin-bottom: 0.3rem;
-    }
-
-    .item-card-title {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      color: var(--text-main);
-    }
-
-    /* PRODUCT DETAIL MODAL */
-    .product-modal {
-      display: none;
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.5);
-      z-index: 2000;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
-    }
-
-    .product-modal-content {
-      background: var(--card-bg);
-      max-width: 800px;
-      width: 100%;
-      border-radius: 16px;
-      overflow: hidden;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      position: relative;
-      max-height: 90vh;
-    }
-
-    @media(max-width: 768px) {
-      .product-modal-content { grid-template-columns: 1fr; overflow-y: auto; }
-    }
-
-    .product-modal-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .product-modal-info {
-      padding: 2.5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 1rem;
-      right: 1.5rem;
-      font-size: 1.8rem;
-      cursor: pointer;
-      color: #999;
+      font-size: 1.2rem;
     }
   </style>
 </head>
@@ -344,159 +279,259 @@
   <!-- HEADER -->
   <header>
     <a href="#" class="logo" onclick="showView('landing')">Hospitenza</a>
-    <div class="user-actions">
-      <div id="auth-status">
-        <button class="btn btn-outline" onclick="openLoginModal()">Login (Access Code)</button>
-      </div>
+    <div id="auth-status">
+      <button class="btn btn-outline" onclick="openLoginModal()">Enter Access Code</button>
     </div>
   </header>
 
-  <div class="container">
-    
-    <!-- LANDING VIEW -->
-    <div id="landing-view" class="view active">
+  <!-- LANDING VIEW (BLUEUNICORN STRUCTURE) -->
+  <div id="landing-view" class="view active">
+    <div class="container">
       <section class="hero">
-        <h1>Curated Equipment & Solutions for Restaurateurs</h1>
-        <p>A handpicked database of high-performance thermal units, refrigeration tech, and premium staff uniforms for modern hospitality venues.</p>
-        <button class="btn btn-primary" style="padding: 1rem 2.5rem; font-size: 1.1rem;" onclick="openLoginModal()">Access Library (Demo Pass)</button>
+        <span class="badge">Restaurateur's Vault 2026</span>
+        <h1>Curated Equipment & Aesthetic Solutions for Modern Hospitality</h1>
+        <p>Save weeks of research. Access hand-selected collections of thermal tech, refrigeration, lighting, entrance concepts, and staff uniforms with direct supplier specs.</p>
+        <button class="btn btn-primary" onclick="openLoginModal()" style="padding: 0.9rem 2rem;">I Already Have Access Code</button>
       </section>
-    </div>
 
-    <!-- DASHBOARD VIEW -->
-    <div id="dashboard-view" class="view">
-      <div class="dashboard-header">
-        <h2>Restaurateur's Vault 2026</h2>
-        <p style="color: var(--text-muted);">Explore hand-curated selections tested for efficiency, durability, and aesthetics.</p>
+      <!-- ALL ACCESS BANNER -->
+      <div class="banner-all-access">
+        <h2>Full Vault Access (All Collections)</h2>
+        <p style="color: #CCC; margin-bottom: 1.5rem;">Get instant access to all present and upcoming 2026 collections.</p>
+        <div style="font-size: 2.8rem; font-family: var(--font-heading); margin-bottom: 1.5rem;">€20 <span style="font-size: 1rem; color: #AAA;">one-time</span></div>
+        <button class="btn btn-primary" style="background: var(--accent); border-color: var(--accent);" onclick="openLoginModal('123')">Enter Code for All-Access (Code: 123)</button>
       </div>
 
-      <!-- CONTROLS: SEARCH & FILTERS -->
-      <div class="controls-bar">
-        <input type="text" id="searchInput" class="search-input" placeholder="Search equipment by name or keyword..." oninput="filterItems()">
-        <div class="filter-pills">
-          <button class="pill active" onclick="setFilter('all', this)">All Categories</button>
-          <button class="pill" onclick="setFilter('Thermal', this)">Thermal Equipment</button>
-          <button class="pill" onclick="setFilter('Refrigeration', this)">Refrigeration</button>
-          <button class="pill" onclick="setFilter('Uniforms', this)">Uniforms & Style</button>
+      <h2 style="font-family: var(--font-heading); text-align: center; margin-bottom: 2rem; font-size: 2.2rem;">Or Pick Individual Collections (€5 each)</h2>
+      
+      <div class="grid-3" id="landingCollectionsGrid"></div>
+    </div>
+  </div>
+
+  <!-- DASHBOARD / MEMBER AREA VIEW -->
+  <div id="dashboard-view" class="view">
+    <div class="container">
+      <div style="margin-bottom: 2rem;">
+        <span class="badge" id="userAccessBadge">Active Access</span>
+        <h1 style="font-family: var(--font-heading); font-size: 2.5rem;">Member Dashboard</h1>
+      </div>
+
+      <!-- CONTROLS BAR: SELECT CATEGORY + SEARCH -->
+      <div class="controls-wrapper">
+        <div style="display: flex; flex-direction: column; gap: 0.3rem;">
+          <label style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted);">SELECT CATEGORY:</label>
+          <select id="categorySelect" class="select-input" onchange="filterDashboard()">
+            <option value="all">All Accessible Categories</option>
+          </select>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 0.3rem; flex: 1;">
+          <label style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted);">SEARCH EQUIPMENT:</label>
+          <input type="text" id="searchInput" class="search-input" placeholder="Type keyword (e.g. Rational, Linen, Glass...)" oninput="filterDashboard()">
         </div>
       </div>
 
-      <!-- CAROUSEL CONTAINER -->
-      <div id="collectionsContainer"></div>
+      <div id="accessibleCollectionsContainer"></div>
     </div>
-
   </div>
 
-  <!-- LOGIN MODAL -->
+  <!-- ACCESS CODE MODAL -->
   <div id="loginModal" class="modal-overlay">
     <div class="modal">
-      <h2>Enter Access Code</h2>
-      <p>Use code <strong>555</strong> to test the member area.</p>
-      <input type="password" id="passCodeInput" placeholder="•••" maxlength="3">
-      <button class="btn btn-primary" style="width: 100%;" onclick="checkCode()">Enter Vault</button>
-      <p id="loginError" style="color: red; margin-top: 1rem; display: none;">Invalid code. Hint: use 555</p>
+      <h2 style="font-family: var(--font-heading);">Enter Access Code</h2>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">Enter your code to unlock your purchased selections.</p>
+      <input type="text" id="passCodeInput" placeholder="e.g. 111, 951, 123">
+      <button class="btn btn-primary" style="width: 100%;" onclick="checkCode()">Access Vault</button>
+      <p id="loginError" style="color: red; font-size: 0.85rem; margin-top: 1rem; display: none;">Invalid Code. Try 111, 222, 951, or 123.</p>
     </div>
   </div>
 
   <!-- PRODUCT DETAIL MODAL -->
-  <div id="productModal" class="product-modal">
-    <div class="product-modal-content">
-      <span class="close-btn" onclick="closeProductModal()">&times;</span>
-      <div class="product-modal-img">
-        <img id="modalImg" src="" alt="Equipment">
-      </div>
-      <div class="product-modal-info">
-        <div>
-          <div id="modalCategory" class="item-card-category">CATEGORY</div>
-          <h2 id="modalTitle" style="font-family: var(--font-heading); margin-bottom: 1rem;">Title</h2>
-          <p id="modalDesc" style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Description...</p>
-        </div>
-        <div>
-          <a id="modalLink" href="https://www.natashumanska.com/" target="_blank" class="btn btn-primary" style="display: block; text-align: center; text-decoration: none;">View Official Website / Specs</a>
+  <div id="productModal" class="modal-overlay">
+    <div class="modal" style="max-width: 600px; text-align: left; padding: 0; overflow: hidden;">
+      <img id="modalImg" src="" style="width: 100%; height: 260px; object-fit: cover;">
+      <div style="padding: 2rem;">
+        <span id="modalCategory" class="item-card-category"></span>
+        <h2 id="modalTitle" style="font-family: var(--font-heading); font-size: 1.8rem; margin: 0.5rem 0 1rem;"></h2>
+        <p id="modalDesc" style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;"></p>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <a id="modalLink" href="https://www.natashumanska.com/" target="_blank" class="btn btn-primary">Official Website / Specs</a>
+          <button class="btn btn-outline" onclick="closeProductModal()">Close</button>
         </div>
       </div>
     </div>
   </div>
 
   <script>
-    // DEMO DATA (3 Collections)
-    const equipmentData = [
+    // DATABASE OF COLLECTIONS
+    const allCollections = [
       {
+        id: "thermal",
+        code: "111",
         category: "Thermal",
-        collectionName: "Thermal & Cooking Innovation 2026",
+        title: "Thermal & Cooking Innovation 2026",
+        price: "€5",
         items: [
-          { id: 1, title: "Rational iCombi Pro 6-Grid", category: "Thermal", image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=80", desc: "Next-gen combi steamer with AI-driven climate management, reducing energy consumption by 28% while maintaining high output precision." },
-          { id: 2, title: "Induction Range Quad-Zone", category: "Thermal", image: "https://images.unsplash.com/photo-1588854337236-6889d631faa8?auto=format&fit=crop&w=800&q=80", desc: "Heavy-duty modular induction cooktop designed for rapid heating and minimal ambient thermal dissipation in compact kitchens." },
-          { id: 3, title: "Josper Charcoal Oven HJC", category: "Thermal", image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80", desc: "Premium enclosed charcoal grill offering authentic smoky flavor profiles with precise airflow control." }
+          { id: 101, title: "Rational iCombi Pro 6-Grid", category: "Thermal", image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=80", desc: "Next-gen combi steamer with AI-driven climate management, reducing energy consumption by 28%." },
+          { id: 102, title: "Induction Range Quad-Zone", category: "Thermal", image: "https://images.unsplash.com/photo-1588854337236-6889d631faa8?auto=format&fit=crop&w=800&q=80", desc: "Heavy-duty modular induction cooktop designed for rapid heating and minimal ambient heat." },
+          { id: 103, title: "Josper Charcoal Oven HJC", category: "Thermal", image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80", desc: "Enclosed charcoal grill offering authentic smoky flavor profiles with precise airflow." }
         ]
       },
       {
+        id: "refrigeration",
+        code: "222",
         category: "Refrigeration",
-        collectionName: "Precision Refrigeration & Cold Chain",
+        title: "Precision Refrigeration & Cold Chain",
+        price: "€5",
         items: [
-          { id: 4, title: "Blast Chiller Touch-Pro 5", category: "Refrigeration", image: "https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?auto=format&fit=crop&w=800&q=80", desc: "Ultra-fast blast freezer capable of bringing core temperature from +90°C to +3°C in under 90 minutes to preserve food texture." },
-          { id: 5, title: "Under-Counter Bar Cooler 3D", category: "Refrigeration", image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80", desc: "Triple-glazed LED backbar refrigeration with eco-friendly R290 refrigerant and whisper-quiet compressor." }
+          { id: 201, title: "Blast Chiller Touch-Pro 5", category: "Refrigeration", image: "https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?auto=format&fit=crop&w=800&q=80", desc: "Ultra-fast blast freezer bringing core temp from +90°C to +3°C in under 90 minutes." },
+          { id: 202, title: "Under-Counter Bar Cooler 3D", category: "Refrigeration", image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80", desc: "Triple-glazed LED backbar refrigeration with eco-friendly R290 refrigerant." }
         ]
       },
       {
+        id: "uniforms",
+        code: "333",
         category: "Uniforms",
-        collectionName: "Modern Staff Apparel & Aprons",
+        title: "Modern Staff Apparel & Aprons",
+        price: "€5",
         items: [
-          { id: 6, title: "Minimalist Linen Chef Jacket", category: "Uniforms", image: "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=800&q=80", desc: "Breathable organic linen blend jacket with hidden magnetic snap closures and moisture-wicking back panels." },
-          { id: 7, title: "Canvas & Leather Service Apron", category: "Uniforms", image: "https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&w=800&q=80", desc: "Durable water-resistant canvas apron featuring genuine leather adjustable cross-back straps for ergonomic weight distribution." }
+          { id: 301, title: "Minimalist Linen Chef Jacket", category: "Uniforms", image: "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=800&q=80", desc: "Breathable organic linen blend jacket with hidden magnetic snap closures." },
+          { id: 302, title: "Canvas & Leather Service Apron", category: "Uniforms", image: "https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&w=800&q=80", desc: "Durable water-resistant canvas apron with genuine leather cross-back straps." }
+        ]
+      },
+      {
+        id: "lighting",
+        code: "444",
+        category: "Lighting",
+        title: "Atmospheric Restaurant Lighting",
+        price: "€5",
+        items: [
+          { id: 401, title: "Wireless Rechargeable Table Lamp", category: "Lighting", image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=800&q=80", desc: "Dim-to-warm cordless table accent lamp with 18h battery life and IP65 waterproofing." },
+          { id: 402, title: "Architectural Brass Pendant Light", category: "Lighting", image: "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=800&q=80", desc: "Hand-brushed solid brass pendant for intimate dining room acoustics and focused lighting." }
+        ]
+      },
+      {
+        id: "entrance",
+        code: "555",
+        category: "Entrance",
+        title: "Entrance & Facade Concept Pack",
+        price: "€5",
+        items: [
+          { id: 501, title: "Custom Concrete Host Stand", category: "Entrance", image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80", desc: "Monolithic architectural host podium with built-in POS drawer and discreet LED accent." }
+        ]
+      },
+      {
+        id: "beverage",
+        code: "666",
+        category: "Beverage",
+        title: "Beverage Service & Crystal Glassware",
+        price: "€5",
+        items: [
+          { id: 601, title: "Hand-Blown Pinot Noir Glass", category: "Beverage", image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80", desc: "Ultra-thin lead-free crystal stemware designed for maximum aromatic aeration." }
         ]
       }
     ];
 
-    let currentFilter = 'all';
+    // ACCESS CODES MAPPING
+    const accessRules = {
+      "111": ["thermal"],
+      "222": ["refrigeration"],
+      "333": ["uniforms"],
+      "444": ["lighting"],
+      "555": ["entrance"],
+      "666": ["beverage"],
+      "951": ["uniforms", "beverage"], // Combined access
+      "123": ["thermal", "refrigeration", "uniforms", "lighting", "entrance", "beverage"], // All access
+      "5555": ["thermal", "refrigeration", "uniforms", "lighting", "entrance", "beverage"]
+    };
 
-    // NAVIGATION
-    function showView(viewName) {
-      document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-      if(viewName === 'landing') document.getElementById('landing-view').classList.add('active');
-      if(viewName === 'dashboard') {
-        document.getElementById('dashboard-view').classList.add('active');
-        renderCollections();
-      }
+    let userAccessibleCollectionIds = [];
+
+    // INITIAL RENDER
+    window.onload = function() {
+      renderLandingGrid();
+    };
+
+    function renderLandingGrid() {
+      const grid = document.getElementById('landingCollectionsGrid');
+      grid.innerHTML = allCollections.map(c => `
+        <div class="card">
+          <div>
+            <span class="item-card-category">${c.category}</span>
+            <h3 style="font-family: var(--font-heading); font-size: 1.4rem; margin-top:0.4rem;">${c.title}</h3>
+            <div class="card-price">${c.price}</div>
+            <ul class="card-features">
+              <li>Curated 2026 Models & Suppliers</li>
+              <li>Direct Links & Technical Specs</li>
+              <li>HD Photo & Video Content</li>
+            </ul>
+          </div>
+          <button class="btn btn-primary" onclick="openLoginModal('${c.code}')">Unlock Collection (Code: ${c.code})</button>
+        </div>
+      `).join('');
     }
 
-    // LOGIN LOGIC (Code 555)
-    function openLoginModal() {
+    function showView(viewName) {
+      document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+      document.getElementById(viewName + '-view').classList.add('active');
+    }
+
+    function openLoginModal(presetCode = '') {
       document.getElementById('loginModal').style.display = 'flex';
+      if(presetCode) document.getElementById('passCodeInput').value = presetCode;
     }
 
     function checkCode() {
-      const input = document.getElementById('passCodeInput').value;
-      if(input === '555') {
+      const code = document.getElementById('passCodeInput').value.trim();
+      if(accessRules[code]) {
+        userAccessibleCollectionIds = accessRules[code];
         document.getElementById('loginModal').style.display = 'none';
+        document.getElementById('loginError').style.display = 'none';
+        
         document.getElementById('auth-status').innerHTML = `
-          <span style="font-size:0.85rem; color: var(--accent); font-weight:600; margin-right:1rem;">• VIP Access Active</span>
+          <span style="font-size:0.85rem; color: var(--accent); font-weight:600; margin-right:1rem;">• Active Code: ${code}</span>
           <button class="btn btn-outline" onclick="logout()">Logout</button>
         `;
+        
+        setupDashboard();
         showView('dashboard');
       } else {
         document.getElementById('loginError').style.display = 'block';
       }
     }
 
-    function logout() {
-      document.getElementById('auth-status').innerHTML = `
-        <button class="btn btn-outline" onclick="openLoginModal()">Login (Access Code)</button>
-      `;
-      showView('landing');
+    function setupDashboard() {
+      const accessibleCols = allCollections.filter(c => userAccessibleCollectionIds.includes(c.id));
+      
+      // Populate Select Dropdown
+      const select = document.getElementById('categorySelect');
+      select.innerHTML = '<option value="all">All Accessible Categories (' + accessibleCols.length + ')</option>';
+      accessibleCols.forEach(c => {
+        select.innerHTML += `<option value="${c.category}">${c.category} — ${c.title}</option>`;
+      });
+
+      renderDashboardItems();
     }
 
-    // RENDER CAROUSELS
-    function renderCollections() {
-      const container = document.getElementById('collectionsContainer');
+    function filterDashboard() {
+      renderDashboardItems();
+    }
+
+    function renderDashboardItems() {
+      const container = document.getElementById('accessibleCollectionsContainer');
+      const selectedCat = document.getElementById('categorySelect').value;
       const searchQuery = document.getElementById('searchInput').value.toLowerCase();
+      
       container.innerHTML = '';
 
-      equipmentData.forEach(cat => {
-        if(currentFilter !== 'all' && cat.category !== currentFilter) return;
+      const accessibleCols = allCollections.filter(c => userAccessibleCollectionIds.includes(c.id));
 
-        const filteredItems = cat.items.filter(item => 
-          item.title.toLowerCase().includes(searchQuery) || 
-          item.desc.toLowerCase().includes(searchQuery)
+      accessibleCols.forEach(col => {
+        if(selectedCat !== 'all' && col.category !== selectedCat) return;
+
+        const filteredItems = col.items.filter(i => 
+          i.title.toLowerCase().includes(searchQuery) || 
+          i.desc.toLowerCase().includes(searchQuery)
         );
 
         if(filteredItems.length === 0) return;
@@ -504,7 +539,7 @@
         const section = document.createElement('div');
         section.className = 'collection-section';
 
-        let itemsHTML = filteredItems.map(item => `
+        const cardsHTML = filteredItems.map(item => `
           <div class="item-card" onclick="openProductModal(${item.id})">
             <img src="${item.image}" alt="${item.title}">
             <div class="item-card-body">
@@ -515,43 +550,36 @@
         `).join('');
 
         section.innerHTML = `
-          <div class="collection-title">${cat.collectionName}</div>
-          <div class="scroll-row">${itemsHTML}</div>
+          <div class="collection-title">${col.title}</div>
+          <div class="scroll-row">${cardsHTML}</div>
         `;
 
         container.appendChild(section);
       });
     }
 
-    function setFilter(cat, btn) {
-      currentFilter = cat;
-      document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
-      btn.classList.add('active');
-      renderCollections();
-    }
-
-    function filterItems() {
-      renderCollections();
-    }
-
-    // PRODUCT MODAL
     function openProductModal(id) {
-      let foundItem = null;
-      equipmentData.forEach(c => {
-        c.items.forEach(i => { if(i.id === id) foundItem = i; });
-      });
+      let found = null;
+      allCollections.forEach(c => c.items.forEach(i => { if(i.id === id) found = i; }));
 
-      if(foundItem) {
-        document.getElementById('modalImg').src = foundItem.image;
-        document.getElementById('modalCategory').innerText = foundItem.category;
-        document.getElementById('modalTitle').innerText = foundItem.title;
-        document.getElementById('modalDesc').innerText = foundItem.desc;
+      if(found) {
+        document.getElementById('modalImg').src = found.image;
+        document.getElementById('modalCategory').innerText = found.category;
+        document.getElementById('modalTitle').innerText = found.title;
+        document.getElementById('modalDesc').innerText = found.desc;
         document.getElementById('productModal').style.display = 'flex';
       }
     }
 
     function closeProductModal() {
       document.getElementById('productModal').style.display = 'none';
+    }
+
+    function logout() {
+      document.getElementById('auth-status').innerHTML = `
+        <button class="btn btn-outline" onclick="openLoginModal()">Enter Access Code</button>
+      `;
+      showView('landing');
     }
   </script>
 </body>
